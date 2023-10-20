@@ -11,4 +11,11 @@ Template: research-amp-theme
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
 */
 
+.research-topic-focus-tags {
+	margin-bottom: 32px;
+}
 
+.taxonomy-ramp_focus_tag .wp-block-post-terms__prefix,
+.focus-tags-label {
+	font-weight: 700;
+}
