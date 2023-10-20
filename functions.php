@@ -69,3 +69,14 @@ add_action(
 		do_action( 'ssrc_meta_nav' );
 	}
 );
+
+/**
+ * Adds Focus Tags taxonomy support for ramp_topic post type.
+ */
+add_action(
+	'init',
+	function() {
+		register_taxonomy_for_object_type( 'ramp_focus_tag', 'ramp_topic' );
+	},
+	100
+);
