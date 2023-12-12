@@ -45,7 +45,7 @@ if ( $r['title_size'] ) {
 	$title_classes[] = 'has-' . $r['title_size'] . '-font-size';
 }
 
-$is_research_topic_directory = is_post_type_archive( 'ramp_topic' );
+$show_focus_tags = is_post_type_archive( 'ramp_topic' ) || is_tax( 'ramp_focus_tag' );
 
 $focus_tags = wp_get_post_terms( $research_topic_id, 'ramp_focus_tag' );
 
@@ -76,7 +76,7 @@ $focus_tags = wp_get_post_terms( $research_topic_id, 'ramp_focus_tag' );
 
 		<div class="item-excerpt research-topic-item-excerpt enforce-reading-width"><?php echo wp_kses_post( get_the_excerpt( $research_topic_id ) ); ?></div>
 
-		<?php if ( $is_research_topic_directory && ! empty( $focus_tags ) ) : ?>
+		<?php if ( $show_focus_tags && ! empty( $focus_tags ) ) : ?>
 			<div class="enforce-reading-length research-topic-focus-tags">
 				<?php
 				$focus_tag_links = array_map(
