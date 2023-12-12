@@ -19,3 +19,207 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 .focus-tags-label {
 	font-weight: 700;
 }
+
+.item-type-list-research-topics.research-topic-teasers-grid li article {
+	background-color:white;
+	padding:0px 34px 15px;
+}
+
+.item-type-block-all-link a {
+	color:#8bbff6;
+	font-weight: 400 !important;
+}
+.wp-block-navigation-item a:where(:not(.wp-element-button)) {
+	font-weight: 500;
+}
+
+.wp-block-research-amp-suggested-items .item-type-list>li {
+	margin-bottom:2px;
+}
+
+.wp-block-research-amp-suggested-items .article-teasers-list h3 {
+	margin-bottom:10px;
+	margin-top:0;
+	line-height: 1.3;
+	font-size: 19px !important;
+}
+.wp-block-research-amp-suggested-items .article-teaser-byline {
+	display:none;
+}
+
+.article-intro-content .research-topic-tags a.research-topic-tag.tag-bubble {
+	text-decoration: none !important;
+	padding-bottom:3px;
+}
+
+.article-intro-content .research-topic-tags a.research-topic-tag.tag-bubble:hover{
+	background-color:#ededed;
+}
+
+.citation-teaser-content h3 {
+	
+}
+
+.tag-bubble.featured-tag {
+	display:none;
+}
+
+.header-logo-column {
+	margin-top:-25px !important;
+}
+.research-topic-tags a, .article-teaser-content .tag-plain a {
+	text-transform:initial !important;
+	font-weight: 400 !important;
+	text-decoration: underline !important;
+	color:#6f98c8;
+	font-size:.8rem;
+}
+
+.research-topic-tags a:hover, .article-teaser-content .tag-plain a:hover {
+	text-decoration: none !important;
+}
+
+/* HP More arrows */
+.item-type-block-all-link > a:after {
+	display:none;
+}
+
+.footer-bottom p a{
+	color:black;
+	font-weight: 600;
+}
+
+.hide {
+	display: none;
+}
+
+.wp-block-navigation .wp-block-navigation__submenu-icon {
+	margin-top:0;
+}
+
+.homepage-slide {
+	padding-top:0;
+	padding-bottom:0;
+	gap:62px;
+}
+
+.homepage-slide-right {
+	margin-right:100px;
+}
+
+.homepage-slider-bullets {
+	padding-left:55px;
+	left:50%;
+	right:50%;
+}
+
+.homepage-slide-right {
+	max-width:520px;
+}
+
+.article-teaser-byline, .teaser-byline {
+	font-size:14px;
+}
+
+a:where(:not(.wp-element-button)) {
+	font-weight:600;
+}
+.item-type-list-research-topics.research-topic-teasers-list article {
+	gap:45px;
+}
+
+.teaser-content .tag-bubble {
+	border:none;
+	padding:0;
+}
+
+.research-reviews-list .teaser.has-featured-image {
+	gap:36px;
+}
+
+.research-reviews-list h3.research-review-item-title {
+	width: 70%;
+}
+
+.item-type-list-research-reviews h3 {
+	font-size:	
+}
+
+.item-type-label {
+	margin-bottom:3px;
+}
+
+/* Article Template */
+
+
+a.wp-block-button__link {
+	font-weight: 500;
+	border-radius: 25px;
+	padding:12px 27px;
+	margin:15px 0;
+	font-size:.9rem;
+	background-color:#6f98c8;
+}
+a.wp-block-button__link:hover {
+	background-color:#5c80aa;
+}
+
+
+
+@media screen and (min-width: 601px) and (max-width: 1160px) {
+	
+	.homepage-slider {
+		padding-left:0;
+		padding-right:30px;
+	}
+	.homepage-slider-bullets {
+		padding-left:40px;
+	}
+	.item-type-list-research-topics.research-topic-teasers-list .research-topic-teaser-image {
+		flex:0 0 374px;
+	}
+}
+@media screen and (max-width: 900px) {
+	.homepage-slide-right {
+		max-width:none;
+	}
+	.homepage-slide-right {
+		margin-right:auto;
+	}
+	.homepage-slider-bullets {
+		padding-left:0;
+		left:10px;
+		right:auto;
+	}
+	.homepage-slide {
+		gap:32px;
+	}
+	.research-reviews-list h3.research-review-item-title {
+		width: 100%;
+	}
+	.research-reviews-list .teaser.has-featured-image {
+		gap:26px;
+	}
+
+	.item-type-list-research-topics.research-topic-teasers-grid li article {
+		background-color:white;
+		padding:0px 10px 5px;
+	}
+	.item-type-list-flex.has-no-row-rules.item-type-list-3>li:first-child, .item-type-list-flex.has-no-row-rules.item-type-list-3>li:nth-child(2), .item-type-list-flex.has-no-row-rules.item-type-list-3>li:nth-child(3){
+		padding-bottom:15px;
+	}
+	.article-teasers {
+		gap:38px;
+	}
+	.teaser, .non-featured-article-teasers.item-type-list-flex .teaser {
+		gap:6px;
+	}
+	.item-type-list-container-grid:not(.allow-horizontal-swipe) .item-type-list-flex {
+		gap:28px;
+	}
+}
+@media screen and (max-width: 768px) {
+		.item-type-list-research-topics.research-topic-teasers-list .research-topic-teaser-image {
+		flex:0 0 274px;
+	}
+}
