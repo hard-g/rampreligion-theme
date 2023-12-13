@@ -80,3 +80,21 @@ add_action(
 	},
 	100
 );
+
+/**
+ * Filters the archive title for our custom taxonomies.
+ */
+add_filter(
+	'get_the_archive_title_prefix',
+	function( $prefix ) {
+		if ( is_tax( 'ramp_article_type' ) ) {
+			return 'Article Type: ';
+		}
+
+		if ( is_tax( 'ramp_focus_tag' ) ) {
+			return 'Tag: ';
+		}
+
+		return $prefix;
+	}
+);
