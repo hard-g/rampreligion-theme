@@ -50,6 +50,7 @@ $slide_count = count( $slides );
 						</div>
 
 						<div class="homepage-slide-right">
+							<div class=""> </div>
 							<?php if ( $slide_meta_text ) : ?>
 								<div class="tag-plain">
 									<?php echo esc_html( $slide_meta_text ); ?>
