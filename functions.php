@@ -6,8 +6,8 @@ add_action(
 	function() {
 		// Cache busting for development.
 		$theme_last_modified = getLatestModificationTime( get_stylesheet_directory() );
-		wp_enqueue_style( 
-			'rampreligion-theme', 
+		wp_enqueue_style(
+			'rampreligion-theme',
 			get_stylesheet_directory_uri() . '/style.css',
 			[],
 			$theme_last_modified
@@ -21,7 +21,7 @@ function getLatestModificationTime($dir) {
         new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS),
         RecursiveIteratorIterator::SELF_FIRST
     );
-    
+
     foreach ($iterator as $fileinfo) {
         if ($fileinfo->isFile()) {
             $fileTime = $fileinfo->getMTime();
@@ -30,7 +30,7 @@ function getLatestModificationTime($dir) {
             }
         }
     }
-    
+
     return $latestTime;
 }
 
