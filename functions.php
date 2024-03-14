@@ -12,31 +12,6 @@ add_action(
 			[],
 			$theme_last_modified
 		);
-
-		// Enqueue the theme's JavaScript.
-		wp_enqueue_script(
-			'rampreligion-theme',
-			get_stylesheet_directory_uri() . '/assets/js/frontend.js',
-			[],
-			$theme_last_modified,
-			true
-		);
-
-		// Determine current post type, which we'll use to set the current nav menu in JS.
-		$current_post_type         = get_post_type();
-		$pt_directory_uri          = get_post_type_archive_link( $current_post_type );
-		$pt_directory_uri_relative = str_replace( home_url(), '', $pt_directory_uri );
-
-		wp_add_inline_script(
-			'rampreligion-theme',
-			'window.rampreligion = ' . wp_json_encode(
-				[
-					'ptDirectoryUri'         => $pt_directory_uri,
-					'ptDirectoryUriRelative' => $pt_directory_uri_relative,
-				]
-			),
-			'before'
-		);
 	}
 );
 
@@ -123,3 +98,58 @@ add_filter(
 		return $prefix;
 	}
 );
+
+/**
+ * More current-menu-item filtering.
+ *
+ * This does not work properly in the theme because the original items were deleted
+ * and recreated without being made 'post-type-archive'.
+ */
+function ramp_religion_add_current_classes_to_nav_links( $block_content, $block ) {
+	if ( false !== strpos( $block_content, 'current-menu-item' ) ) {
+		return $block_content;
+	}
+
+	$is_current = false;
+
+	$archives = [
+		'ramp_topic'     => get_post_type_archive_link( 'ramp_topic' ),
+		'ramp_review'    => get_post_type_archive_link( 'ramp_review' ),
+		'ramp_article'   => get_post_type_archive_link( 'ramp_article' ),
+		'ramp_profile'   => get_post_type_archive_link( 'ramp_profile' ),
+		'ramp_citation'  => get_post_type_archive_link( 'ramp_citation' ),
+		'ramp_news_item' => get_post_type_archive_link( 'ramp_news_item' ),
+	];
+
+	switch ( $block['attrs']['kind'] ) {
+		case 'custom' :
+		case 'post-type-archive' :
+			$post_type = null;
+			foreach ( $archives as $type => $url ) {
+				if ( $url === $block['attrs']['url'] ) {
+					$post_type = $type;
+					break;
+				}
+
+				// Also check for relative URLs.
+				if ( str_replace( home_url(), '', $url ) === $block['attrs']['url'] ) {
+					$post_type = $type;
+					break;
+				}
+			}
+
+			if ( $post_type ) {
+				$is_current = is_post_type_archive( $post_type ) || is_singular( $post_type );
+			}
+
+			break;
+	}
+
+	if ( $is_current ) {
+		$block_content = preg_replace( '/^<li class="/', '<li class="current-menu-item ', $block_content );
+	}
+
+	return $block_content;
+}
+add_filter( 'render_block_core/navigation-link', 'ramp_religion_add_current_classes_to_nav_links', 20, 2 );
+add_filter( 'render_block_core/navigation-submenu', 'ramp_religion_add_current_classes_to_nav_links', 20, 2 );
