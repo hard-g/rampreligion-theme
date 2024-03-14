@@ -72,7 +72,9 @@ $title_classes = [
 ?>
 
 <article class="<?php echo esc_attr( implode( ' ', $article_classes ) ); ?>">
-	<?php ramp_get_template_part( 'item-type-label', [ 'label' => 'Article' ] ); ?>
+	<?php if ( is_search() || is_tax() ) : ?>
+		<?php ramp_get_template_part( 'item-type-label', [ 'label' => 'Article' ] ); ?>
+	<?php endif; ?>
 
 	<?php if ( $is_featured ) : ?>
 		<?php ramp_get_template_part( 'featured-tag' ); ?>
