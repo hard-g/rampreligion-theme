@@ -153,3 +153,16 @@ function ramp_religion_add_current_classes_to_nav_links( $block_content, $block 
 }
 add_filter( 'render_block_core/navigation-link', 'ramp_religion_add_current_classes_to_nav_links', 20, 2 );
 add_filter( 'render_block_core/navigation-submenu', 'ramp_religion_add_current_classes_to_nav_links', 20, 2 );
+
+/**
+ * Change the rewrite settings for the ramp_review post type.
+ */
+add_action(
+	'init',
+	function() {
+		$review_post_type = get_post_type_object( 'ramp_review' );
+		$review_post_type->rewrite['slug'] = 'field-reviews';
+		register_post_type( 'ramp_review', $review_post_type );
+	},
+	100
+);
