@@ -13,6 +13,9 @@ if ( ! empty( $args['date'] ) ) {
 	$date_html = '<span class="byline-publication-date">' . esc_html( $args['date'] ) . '</span>';
 }
 
+// Never show Date on Intersections.
+$date_html = '';
+
 $byline = '';
 if ( $author_html && $date_html ) {
 	$byline = sprintf(
