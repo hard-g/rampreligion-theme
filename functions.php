@@ -12,6 +12,31 @@ add_action(
 			[],
 			$theme_last_modified
 		);
+
+		// Enqueue the theme's JavaScript.
+		wp_enqueue_script(
+			'rampreligion-theme',
+			get_stylesheet_directory_uri() . '/assets/js/frontend.js',
+			[],
+			$theme_last_modified,
+			true
+		);
+
+		// Determine current post type, which we'll use to set the current nav menu in JS.
+		$current_post_type         = get_post_type();
+		$pt_directory_uri          = get_post_type_archive_link( $current_post_type );
+		$pt_directory_uri_relative = str_replace( home_url(), '', $pt_directory_uri );
+
+		wp_add_inline_script(
+			'rampreligion-theme',
+			'window.rampreligion = ' . wp_json_encode(
+				[
+					'ptDirectoryUri'         => $pt_directory_uri,
+					'ptDirectoryUriRelative' => $pt_directory_uri_relative,
+				]
+			),
+			'before'
+		);
 	}
 );
 
