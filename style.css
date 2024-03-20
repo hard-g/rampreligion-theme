@@ -209,6 +209,7 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 
 .article-teaser-byline, .teaser-byline {
 	font-size:14px;
+	line-height:19px;
 }
 
 a:where(:not(.wp-element-button)) {
@@ -438,7 +439,7 @@ header li.wp-block-navigation-item a {
 h2.design-element {
 	background-image: url("./assets/img/small-angle-design.png");
 	background-repeat: no-repeat;
-	background-position:  88% -3%;
+	background-position:  90% -3%;
 }
 h2.design-element2 {
 	background-image: url("./assets/img/small-angle-design.png");
@@ -623,6 +624,8 @@ li .wp-block-research-amp-search-result-teaser:first-child {
 .wp-block-research-amp-table-of-contents div#ez-toc-container ul li {
 	margin-bottom:0;
 	padding-bottom:0px;
+	line-height: 20px;
+	padding-bottom: 7px;
 }
 
 .wp-block-research-amp-table-of-contents div#ez-toc-container ul li a:where(:not(.wp-element-button)) {
@@ -739,6 +742,9 @@ li .wp-block-research-amp-search-result-teaser:first-child {
 	}
 	.section-toggle {
 		top:17px;
+	}
+	.ramp_article-template .wp-block-post-featured-image {
+	margin-top:0 !important;
 	}
 }
 
