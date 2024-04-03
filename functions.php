@@ -88,7 +88,7 @@ add_filter(
 	'get_the_archive_title_prefix',
 	function( $prefix ) {
 		if ( is_tax( 'ramp_article_type' ) ) {
-			return 'Article Type: ';
+			return 'Project Type: ';
 		}
 
 		if ( is_tax( 'ramp_focus_tag' ) ) {
