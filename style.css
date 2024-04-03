@@ -39,6 +39,7 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 
 .wp-block-research-amp-suggested-items .item-type-list>li {
 	margin-bottom:2px;
+	padding-bottom:5px;
 }
 
 .wp-block-research-amp-suggested-items .article-teasers-list h3, .wp-block-research-amp-suggested-items .news-item-teaser-content h3 {
@@ -78,6 +79,10 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 .arrow-button, .item-type-block-all-link {
 	margin-top:0;
 }
+
+
+
+
 .ramp_news_item-template-default .research-topic-tags a:hover {
 	opacity: .9;
 }
@@ -95,14 +100,38 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 	text-transform:initial !important;
 	font-weight: 400 !important;
 	text-decoration: none !important;
-	background-color:#6f98c8;
-	color:white;
-	border:1px solid #6f98c8 !important;
+	background-color:rgb(111 152 200 / 20%);
+	color:#274e69;
+	border:1px solid rgb(111 152 200 / 20%) !important;
 	border-radius: 25px;
-	font-size:.8rem;
-	padding:2px 16px 3px !important;
+	font-size:12px !important;
+	padding:4px 16px 4px !important;
 	line-height: 1.4;
 } 
+
+.ramp_article-template .research-topic-tags a {
+	border-color:#fff !important;
+	font-weight: 600 !important;
+	font-size: 14px !important;
+}
+
+.ramp_article-template .wp-block-item-research-topics {
+	margin-top:15px;
+}
+
+.ramp_article-template .taxonomy-ramp_focus_tag .wp-block-post-terms__prefix, .focus-tags-label {
+	font-weight: 500;
+	font-size: 15px;
+}
+
+.ramp_article-template .taxonomy-ramp_focus_tag a {
+	font-weight: 500;
+	text-decoration: underline;
+	font-size: 15px;
+}
+.ramp_article-template .taxonomy-ramp_focus_tag a:hover {
+	text-decoration: none;
+}
 
 .research-topic-tags a:hover {
 	opacity: .9;	
@@ -118,13 +147,32 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 	padding: 0 0 2px 0 !important;
 } 
 
+.single-ramp_review .byline-author a {
+	font-style: italic;
+	text-decoration: none;
+}
+.single-ramp_review .byline-author a:hover {
+	text-decoration: underline;
+}
+
+.single-ramp_review h1 {
+	margin-top:0;
+}
 
 .wp-block-item-research-topics {
 	margin-top:28px;
 }
-
 .citation-teaser-content h3 {
-	
+	margin-bottom: 0;
+}
+
+.research-review-item-excerpt {
+	font-size:16px;
+}
+.citation-teaser-content h3 a {
+	font-size:19px;
+	font-weight: 600;
+	line-height: 1.4;
 }
 
 .tag-bubble.featured-tag {
@@ -208,12 +256,23 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 }
 
 .article-teaser-byline, .teaser-byline {
-	font-size:14px;
-	line-height:19px;
+	font-size:13px;
+	line-height:22px;
+	font-style: italic;
+	font-weight: 500;
+}
+.article-teaser-byline, .teaser-byline a {
+	text-decoration: none;
+	font-style: italic;
 }
 
+
+
+.research-topic-item-excerpt {
+	font-size:16px;
+}
 a:where(:not(.wp-element-button)) {
-	font-weight:600;
+	font-weight:500;
 }
 .item-type-list-research-topics.research-topic-teasers-list article {
 	gap:45px;
@@ -243,11 +302,18 @@ div.wp-block-research-amp-search-result-teaser .teaser .item-type-label {
 /* Article Template */
 
 
+.ramp_article-template .wp-block-research-amp-item-byline a {
+	font-weight: 500;
+	font-size: 16px;
+	font-style: italic;
+	text-decoration: none;
+}
+
 a.wp-block-button__link {
 	font-weight: 500;
 	border-radius: 25px;
 	padding:12px 27px;
-	margin:15px 0;
+	margin:25px 0;
 	font-size:.9rem !important;
 	background-color:#6f98c8 !important;
 	line-height: 1rem;
@@ -279,6 +345,7 @@ a.wp-block-button__link:hover {
 .profile-teaser-title {
 	font-size:15px;
 	line-height: 1.5;
+	font-style: italic;
 }
 
 .single-ramp_profile h1 {
@@ -298,12 +365,45 @@ a.wp-block-button__link:hover {
 	max-width:216px;
 }
 
-.article-teaser-content h3 {
-	margin-bottom: 9px;
+.profile-teaser-name h3 a {
+	font-size: 19px;
+	font-weight: 600;
 }
 
-.article-teaser-byline {
+.article-teaser-content h3, .research-review-teaser-content h3 a, .research-topic-teaser h3 a {
+	margin-bottom: 9px;
+	font-size:21px !important;
+	line-height: 1.3;
+	font-weight: 600;
+}
+
+.article-teaser-content h3 a {
+	font-weight: 600;
+}
+.news-item-teaser-content, .news-item-teaser-content h3 a {
+	font-size:21px;
+	line-height: 1.4;
+	font-weight: 600;
+}
+.research-review-teaser-content h3 {
+	margin-bottom: 9px;
+	line-height: 0;
+	font-weight: 600;
+}
+
+.article-teaser-byline, .research-review-teaser-byline {
 	margin-top:0px;
+}
+
+.research-review-teaser-content .research-review-teaser-byline {
+	margin-top:10px;
+}
+
+.article-teaser-byline .byline-author a {
+	font-style: italic;
+}
+.research-reviews-grid .teaser, .featured-article-teaser .teaser {
+	gap:0;
 }
 
 /* .homepage-slide-img {
@@ -341,9 +441,10 @@ a.wp-block-button__link:hover {
 }
 
 .wp-block-post-content .wp-block-image, .wp-block-post-content .wp-block-embed {
-	padding-top: 1.5rem;
-	padding-bottom: 1rem;
+	padding-top: 2.5rem;
+	padding-bottom: 0rem;
 	margin-block-start:0;
+	margin-bottom: 2rem;
 }
 .wp-element-caption {
 	font-size:.9rem;
@@ -354,7 +455,17 @@ a.wp-block-button__link:hover {
 	margin-top:0px;
 	font-style: italic;
 	text-align: left;
+	line-height: 1.5;
 }
+
+.wp-element-caption {
+	margin-top:15px !important;
+	margin-bottom: 0 !important;
+	font-style: italic;
+	text-align: left;
+	line-height: 1.5;
+}
+
 .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
 	border:none;
 }
@@ -373,7 +484,7 @@ ul.wp-block-navigation__submenu-container  li {
 }
 
 ul.wp-block-navigation__submenu-container  li:last-child {
-	border-bottom:none !important;;
+	border-bottom:none !important;
 }
 
 ul.wp-block-navigation__submenu-container  li a {
@@ -384,8 +495,8 @@ ul.wp-block-navigation__submenu-container  li a {
 	margin-top:10px
 }
 .wp-block-quote {
-	margin-top:1.5rem;
-	margin-bottom:1.5rem;
+	margin-top:2.5rem;
+	margin-bottom:2.5rem;
 }
 
 :where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item a:not(.wp-element-button)) {
@@ -399,12 +510,22 @@ header li.wp-block-navigation-item a {
 	font-weight: 600;
 }
 
+.item-type-block-all-link a {
+	text-decoration: underline !important;
+}
+.item-type-block-all-link a:hover {
+	text-decoration: none !important;
+}
+
 .wp-block-quote p {
 	font-style: italic;
 	font-weight: bold;
 	padding-bottom:5px;
 	font-size: 21px;
-	line-height: 1.4;
+	line-height: 1.5;
+}
+.wp-block-quote {
+	padding-left:35px;
 }
 .hide {
 	display: none;
@@ -439,22 +560,22 @@ header li.wp-block-navigation-item a {
 h2.design-element {
 	background-image: url("./assets/img/small-angle-design.png");
 	background-repeat: no-repeat;
-	background-position:  90% -3%;
+	background-position:  90% 32%;
 }
 h2.design-element2 {
 	background-image: url("./assets/img/small-angle-design.png");
 	background-repeat: no-repeat;
-	background-position: 48% -3%;
+	background-position: 48% 35%;
 }
 h2.design-element3 {
 	background-image: url("./assets/img/small-angle-design.png");
 	background-repeat: no-repeat;
-	background-position: 77% -3%;
+	background-position: 77% 32%;
 }
 h2.design-element4 {
 	background-image: url("./assets/img/small-angle-design.png");
 	background-repeat: no-repeat;
-	background-position: 32% -3%;
+	background-position: 32% 32%;
 }
 
 .home section header h2 {
@@ -521,7 +642,7 @@ h3.sidebar-section-title {
 }
 
 .article-teasers-grid .teaser {
-	gap:8px;
+	gap:0;
 }
 
 ol li, ul li {
@@ -602,13 +723,20 @@ li .wp-block-research-amp-search-result-teaser:first-child {
 	border-bottom: 1px solid #abb8c3;
 	padding-bottom:30px;
 }
-
+.item-type-list-citations>li:last-child {
+	border-bottom: none;
+	
+}
 .directory-filter-form>div.directory-filters-submit {
 	flex:auto;
 }
 
 .directory-filter-form {
 	padding:12px 0;
+}
+
+.citation-info {
+	font-size:15px;
 }
 
 /* RIGHT COL */
@@ -626,6 +754,18 @@ li .wp-block-research-amp-search-result-teaser:first-child {
 	padding-bottom:0px;
 	line-height: 20px;
 	padding-bottom: 7px;
+}
+
+.wp-block-research-amp-suggested-items .article-teasers-list h3 a {
+	font-weight: 600;
+}
+.wp-block-research-amp-suggested-items .article-teasers-list h3 {
+	font-size: 16px !important;
+	line-height: 1.6;
+}
+
+.wp-container-core-columns-layout-4.wp-container-core-columns-layout-4 {
+	gap:92px;
 }
 
 .wp-block-research-amp-table-of-contents div#ez-toc-container ul li a:where(:not(.wp-element-button)) {
@@ -648,6 +788,11 @@ li .wp-block-research-amp-search-result-teaser:first-child {
 	content: "\2023";
 }
 
+ol li, ul li  {
+	padding-left:5px;
+}
+
+
 .wp-block-separator {
 	border:1px solid #cecece;
 }
@@ -659,6 +804,59 @@ li .wp-block-research-amp-search-result-teaser:first-child {
 .item-type-list-citations>li::last-child {
 	border-bottom:none;
 }
+
+
+/* RESEARCH TOPIC */
+
+.post-type-archive .research-topic-teaser h3 a {
+	font-size:27px !important;	
+}
+
+.research-topic-teaser-contents .research-topic-focus-tags a {
+	font-size:16px; 
+}
+
+.research-topic-focus-tags {
+	line-height: 1.5;
+}
+
+.ramp_topic-template-default .research-topic-tags {
+	display: none;
+}
+
+.ramp_topic-template-default .item-type-list-citations>li {
+	padding-bottom: 20px;
+	margin-bottom: 28px;
+	padding-left:0px;
+}
+
+.ramp_topic-template-default .citation-info dl {
+	margin-top:8px;
+}
+
+.ramp_topic-template-default .citation-info dl div {
+	line-height: 1.5;
+}
+/* MAIN ARTICLE */
+
+main h2 {
+	margin-bottom:15px;
+	font-weight: 600;
+}
+
+main h3 {
+	font-size:26px;
+	margin-top: 25px;
+}
+
+main figure {
+	padding-top:1rem;
+	padding-bottom:1rem;
+}
+
+
+
+
 
 
 @media screen and (min-width: 601px) and (max-width: 1160px) {
@@ -746,6 +944,9 @@ li .wp-block-research-amp-search-result-teaser:first-child {
 	.ramp_article-template .wp-block-post-featured-image {
 	margin-top:0 !important;
 	}
+		.reduce-padding {
+		margin-bottom: 0 !important;
+	}
 }
 
 @media screen and (max-width: 600px) {
@@ -756,11 +957,23 @@ li .wp-block-research-amp-search-result-teaser:first-child {
 	header .header-default {
 		padding-top:28px !important;
 	}
+	.wp-block-navigation.items-justified-right .wp-block-navigation__container .has-child .wp-block-navigation__submenu-container {
+		padding-top:0 !important;
+	}
+	.wp-block-navigation .has-child .wp-block-navigation__submenu-container>.wp-block-navigation-item>.wp-block-navigation-item__content {
+		font-weight: 500;
+	}
+	.sidebar-section-collapsible h3.sidebar-section-title {
+		padding-bottom:10px;
+	}
 	body.post-type-archive .directory-intro {
 		margin-bottom: 40px;
 	}
 	header nav button.wp-block-navigation__responsive-container-open {
 		margin-top:0px;
+	}
+	.header-nav-column {
+		margin-top:0 !important;
 	}
 	nav {
 		margin-top: -13px !important;
@@ -799,6 +1012,9 @@ li .wp-block-research-amp-search-result-teaser:first-child {
 	}
 	.item-type-list-research-topics.research-topic-teasers-list article {
 		gap:30px;
+	}
+	.profile-teaser-avatar>img {
+		height:120px;
 	}
 	
 }
