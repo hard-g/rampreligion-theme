@@ -179,3 +179,19 @@ add_action(
 	},
 	100
 );
+
+/**
+ * Remove rewrite rules for 'research-reviews' and 'articles' post types archives.
+ */
+add_filter(
+	'rewrite_rules_array',
+	function( $rules ) {
+		foreach ( $rules as $rule => $rewrite ) {
+			if ( 0 === strpos( $rule, 'research-reviews' ) || 0 === strpos( $rule, 'articles' ) ) {
+				unset( $rules[ $rule ] );
+			}
+		}
+
+		return $rules;
+	}
+);
