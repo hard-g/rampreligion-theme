@@ -160,9 +160,15 @@ add_filter( 'render_block_core/navigation-submenu', 'ramp_religion_add_current_c
 add_action(
 	'init',
 	function() {
+		// 'research-reviews' => 'field-reviews'
 		$review_post_type = get_post_type_object( 'ramp_review' );
 		$review_post_type->rewrite['slug'] = 'field-reviews';
 		register_post_type( 'ramp_review', $review_post_type );
+
+		// 'articles' => 'projects'
+		$article_post_type = get_post_type_object( 'ramp_article' );
+		$article_post_type->rewrite['slug'] = 'projects';
+		register_post_type( 'ramp_article', $article_post_type );
 	},
 	100
 );
