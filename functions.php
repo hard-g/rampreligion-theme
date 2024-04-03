@@ -169,6 +169,11 @@ add_action(
 		$article_post_type = get_post_type_object( 'ramp_article' );
 		$article_post_type->rewrite['slug'] = 'projects';
 		register_post_type( 'ramp_article', $article_post_type );
+
+		// 'article-type' => 'project-type'
+		$article_type_taxonomy = get_taxonomy( 'ramp_article_type' );
+		$article_type_taxonomy->rewrite['slug'] = 'project-type';
+		register_taxonomy( 'ramp_article_type', $article_type_taxonomy->object_type, $article_type_taxonomy );
 	},
 	100
 );
