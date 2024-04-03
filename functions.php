@@ -155,7 +155,7 @@ add_filter( 'render_block_core/navigation-link', 'ramp_religion_add_current_clas
 add_filter( 'render_block_core/navigation-submenu', 'ramp_religion_add_current_classes_to_nav_links', 20, 2 );
 
 /**
- * Change the rewrite settings for the ramp_review post type.
+ * Change the rewrite settings and labels for post types and taxonomies.
  */
 add_action(
 	'init',
@@ -163,11 +163,13 @@ add_action(
 		// 'research-reviews' => 'field-reviews'
 		$review_post_type = get_post_type_object( 'ramp_review' );
 		$review_post_type->rewrite['slug'] = 'field-reviews';
+		$review_post_type->labels->name = 'Field Reviews';
 		register_post_type( 'ramp_review', $review_post_type );
 
 		// 'articles' => 'projects'
 		$article_post_type = get_post_type_object( 'ramp_article' );
 		$article_post_type->rewrite['slug'] = 'projects';
+		$article_post_type->labels->name = 'Projects';
 		register_post_type( 'ramp_article', $article_post_type );
 
 		// 'article-type' => 'project-type'
