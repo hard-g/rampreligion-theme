@@ -195,3 +195,76 @@ add_filter(
 		return $rules;
 	}
 );
+
+function ssrc_meta_nav_callback() {
+	?>
+	<div class="ssrc-meta-nav">
+		<div class="ssrc-meta-nav-inner">
+			<button class="mobile-nav"><?php _e( 'SSRC Research AMP', 'research-amp' ); ?></button>
+			<a href="https://www.ssrc.org/" target="_blank"><?php _e( 'Social Science Research Council', 'research-amp' ); ?></a>
+			<a href="https://ramp.ssrc.org/" target="_blank"><?php _e( 'Research AMP', 'research-amp' ); ?></a>
+			<a href="https://mediawell.ssrc.org/" target="_blank"><?php _e( 'Mediawell', 'research-amp' ); ?></a>
+		</div>
+	</div>
+	<?php
+}
+add_action( 'wp_body_open', 'ssrc_meta_nav_callback' );
+
+function ssrc_meta_nav_scripts() {
+	?>
+	<style>
+		.ssrc-meta-nav {
+			background: #91bdea;
+		}
+		.ssrc-meta-nav-inner {
+			text-align: right;
+			max-width: 1160px;
+			margin: auto;
+		}
+		.ssrc-meta-nav a {
+			font-size: 14px;
+			text-decoration: none;
+			color: #000;
+			padding: 0 5px;
+		}
+		.ssrc-meta-nav a:hover {
+			color: #fff;
+		}
+		.ssrc-meta-nav a + a {
+			border-left: solid black 1px;
+		}
+		.mobile-nav {
+			display: none;
+			text-transform: uppercase;
+			background: none;
+			padding: 10px 0;
+			border: none;
+			width: 100%;
+		}
+		@media screen and (max-width: 600px) {
+			.ssrc-meta-nav-inner {
+				text-align: center;
+			}
+			.ssrc-meta-nav a {
+				display: none;
+			}
+			.ssrc-meta-nav.active a {
+				display: block;
+			}
+			.ssrc-meta-nav a + a {
+				border-left: 0;
+			}
+			.mobile-nav {
+				display: block;
+			}
+		}
+	</style>
+
+	<script>
+	document.querySelector('.mobile-nav').addEventListener('click', function(event) {
+		event.target.closest('.ssrc-meta-nav').classList.toggle('active');
+	});
+	</script>
+	<?php
+}
+add_action( 'wp_footer', 'ssrc_meta_nav_scripts' );
